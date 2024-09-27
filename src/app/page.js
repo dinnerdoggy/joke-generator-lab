@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 function Home() {
   return (
     <div
@@ -10,6 +11,7 @@ function Home() {
       }}
     >
       Welcome to Next JS!
+      <button>Get a Joke</button>
     </div>
   );
 }

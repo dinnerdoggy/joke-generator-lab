@@ -23,14 +23,14 @@ export const generateMetadata = async ({ params }) => {
   const { slug } = params; // Example of accessing dynamic route params
 
   return {
-    title: `TEMPLATE - ${slug || 'HOME'}`, // Dynamically set the title using route parameters
+    title: `JokeGen - ${slug || 'HOME'}`, // Dynamically set the title using route parameters
     description: `This is a dynamically generated description for ${slug}.`, // Dynamic description
     // Add other metadata fields as needed, like keywords, open graph tags, etc.
     keywords: [`${slug}`, 'dynamic', 'page'],
     openGraph: {
       title: `Open Graph Title for ${slug}`,
       description: `Open Graph Description for ${slug}`,
-      url: `https://yourwebsite.com/${slug}`,
+      url: `https://caseys-joke-gen-react.netlify.app/${slug}`,
     },
   };
 };
