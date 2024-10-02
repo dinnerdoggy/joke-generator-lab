@@ -1,5 +1,12 @@
+'use client';
+
+import Page from '../api/jokeData';
+
 /* eslint-disable react/button-has-type */
 function Home() {
+  const handleClick = () => {
+    Page();
+  };
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -11,7 +18,7 @@ function Home() {
       }}
     >
       Welcome to Next JS!
-      <button>Get a Joke</button>
+      <button onClick={handleClick}>Get a Joke</button>
     </div>
   );
 }

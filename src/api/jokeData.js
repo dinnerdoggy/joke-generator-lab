@@ -1,16 +1,16 @@
-const endpoint = 'https://v2.jokeapi.dev/joke/Programming?safe-mode&type=twopart';
+export default async function Page() {
+  const data = await fetch('https://v2.jokeapi.dev/joke/Programming?safe-mode&type=twopart');
+  const jokes = await data.json();
 
-const getJoke = () =>
-  new Promise((resolve, reject) => {
-    fetch(endpoint, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => resolve(data))
-      .catch(reject);
-  });
+  console.warn(jokes.setup);
+  console.warn(jokes.delivery);
 
-export default getJoke;
+  return (
+    <ul>
+      <li key={jokes.setup}>
+        <strong>{jokes.setup}</strong>
+      </li>
+      <li key={jokes.delivery}>{jokes.delivery}</li>
+    </ul>
+  );
+}
