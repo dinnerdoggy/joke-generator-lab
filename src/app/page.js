@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import Page from '../api/jokeData';
 
 /* eslint-disable react/button-has-type */
 function Home() {
+  const [showComponent, setShowComponent] = useState(false);
   const handleClick = () => {
-    Page();
+    setShowComponent(!showComponent);
   };
   return (
     <div
@@ -19,6 +21,7 @@ function Home() {
     >
       Welcome to Next JS!
       <button onClick={handleClick}>Get a Joke</button>
+      {showComponent && <Page />}
     </div>
   );
 }
